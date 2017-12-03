@@ -2,6 +2,9 @@ const chai = require('chai');
 const assert = chai.assert;
 const Player = require('../lib/Player');
 
+global.Audio = class {};
+global.Image = class {};
+
 beforeEach( () => {
   player = new Player(300, 300, 30, 30);
 });
@@ -9,7 +12,6 @@ beforeEach( () => {
 describe('Player unit testing', () => {
   
   it('should instantiate a player', () => {
-    console.log(player);
       assert.isObject(player); 
   });
 
