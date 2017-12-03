@@ -6,11 +6,11 @@ const Projectile = require('../lib/Projectile');
 global.Audio = class {};
 global.Image = class {};
 
+beforeEach(() => {
+  projectile = new Projectile(30, 30, 5, 5);
+});
+
 describe('Projectile unit testing', () => {
-  
-  beforeEach(() => {
-    projectile = new Projectile(30, 30, 5, 5);
-  });
 
   it('should instantiate a projectile', () => {
     assert.isObject(projectile);
