@@ -1,14 +1,15 @@
+global.Image = class {};
+global.Audio = class {};
+
 const chai = require('chai');
 const assert = chai.assert;
 const Enemy = require('../lib/Enemy');
 const Player = require('../lib/Player');
 
 
+
 // images have to commented out in player.js and enemy.js for the test below to run right now.
 // not sure what is goin on got images to work in other test files
-
-global.Audio = class {};
-global.Image = class {};
 
 
 beforeEach( () => {
@@ -43,8 +44,9 @@ describe('Enemy unit testing', () => {
     assert.deepEqual(enemy.enemyArray, []); 
   });
 
-  it.only('should be able to seek the player', () => {
+  it('should be able to seek the player', () => {
     player = new Player(250, 250, 30, 30);
+    
     assert.equal(enemy.targetY, null);
     assert.equal(enemy.targetX, null);
     assert.equal(enemy.dx, 0);

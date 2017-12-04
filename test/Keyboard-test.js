@@ -1,15 +1,10 @@
+global.window = {};
+
 const chai = require('chai');
-const expect = chai.expect;
+const assert = chai.assert;
 const Keyboard = require('../lib/Keyboard.js');
 
-global.document = {
-	getElementById: function() {}
-};
-
-global.window = document.defaultView;
-
-
-describe.skip('Keyboard unit testing', () => {
+describe('Keyboard unit testing', () => {
 
   beforeEach(() => {
     keyboard = new Keyboard();
@@ -18,6 +13,5 @@ describe.skip('Keyboard unit testing', () => {
   it('should instantiate a Keyboard', () => {
     assert.isObject(keyboard);
   });
-
 
 });
