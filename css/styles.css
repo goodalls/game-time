@@ -1,9 +1,13 @@
 body {
   background-color: lightgrey;
+  background-image: url('../images/ducky-bg.jpg');
+  background-size: cover;
 }
 
 #canvas {
   background-color: white;
+  background-image: url('../images/whiteboard.jpg');
+  background-size: cover;
   border: 1px dashed black;
   margin: 2em auto;
   display: block;
