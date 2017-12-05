@@ -1,14 +1,16 @@
 body {
-  background-color: lightgrey;
   background-image: url('../images/ducky-bg.jpg');
+  background-position: contain;
   background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 #canvas {
   background-color: white;
   background-image: url('../images/whiteboard.jpg');
   background-size: cover;
-  border: 1px dashed black;
+  border: 1px solid black;
   margin: 2em auto;
   display: block;
 }
