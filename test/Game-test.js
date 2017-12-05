@@ -1,11 +1,6 @@
 global.Image = class {};
 global.window = {};
 
-canvas = {
-  width: 600
-};
-
-
 const chai = require('chai');
 const assert = chai.assert;
 const Enemy = require('../lib/Enemy.js');
@@ -15,7 +10,7 @@ beforeEach( () => {
   game = new Game();
 });
 
-describe.only('Game unit testing', () => {
+describe('Game unit testing', () => {
   
   it('should instantiate a game', () => {
     assert.isObject(game);
