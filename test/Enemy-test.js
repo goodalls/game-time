@@ -7,11 +7,6 @@ const Enemy = require('../lib/Enemy');
 const Player = require('../lib/Player');
 
 
-
-// images have to commented out in player.js and enemy.js for the test below to run right now.
-// not sure what is goin on got images to work in other test files
-
-
 beforeEach( () => {
   enemy = new Enemy(300, 300, 20, 20);
 });
