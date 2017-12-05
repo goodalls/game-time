@@ -1,15 +1,17 @@
 const chai = require('chai');
 const assert = chai.assert;
 const Player = require('../lib/Player');
+const Enemy = require('../lib/Enemy');
 
 global.Audio = class {};
 global.Image = class {};
+
 
 beforeEach( () => {
   player = new Player(300, 300, 30, 30);
 });
 
-describe('Player unit testing', () => {
+describe.only('Player unit testing', () => {
   
   it('should instantiate a player', () => {
       assert.isObject(player); 
@@ -32,8 +34,32 @@ describe('Player unit testing', () => {
     assert.equal(player.speed, 10);
   });
 
-  it('should have a default of isOnBoard set to true ', () => {
+  it('should have a defaults of isOnBoard set to true and isDead set to false ', () => {
     assert.equal(player.isOnBoard, true);
+    assert.equal(player.isDead, false);
+  });
+
+  it('should have forEaches through an array and set item.targetX and item.targetY to player.x and player.y', () => {
+    const enemyArray = []
+    enemy = new Enemy(200, 200, 20, 20);
+    enemyArray.push(enemy);
+
+    player.playerCollision(enemyArray, context, player);
+  
+    assert.equal(enemy.targetX, 300);
+    assert.equal(enemy.targetY, 300);
+  });
+
+  it('should have detect collision of the player with the passed in array and then sets player.isDead to true', () => {
+    const enemyArray = []
+    enemy = new Enemy(280, 280, 20, 20);
+    enemyArray.push(enemy);
+
+    assert.equal(player.isDead, false);
+
+    player.playerCollision(enemyArray, context, player);
+
+    assert.equal(player.isDead, true);
   });
 
 });

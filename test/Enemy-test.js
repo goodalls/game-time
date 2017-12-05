@@ -1,5 +1,6 @@
 global.Image = class {};
 global.Audio = class {};
+global.window = class {};
 
 const chai = require('chai');
 const assert = chai.assert;
@@ -32,11 +33,6 @@ describe('Enemy unit testing', () => {
   it('should have defaults of dx and dy set to 0', () => {
     assert.equal(enemy.dx, 0);
     assert.equal(enemy.dy, 0);
-  });
-
-  it('should have a default enemyArray set to an empty array', () => {
-    assert.isArray(enemy.enemyArray);
-    assert.deepEqual(enemy.enemyArray, []); 
   });
 
   it('should be able to seek the player', () => {
