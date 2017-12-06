@@ -11,7 +11,7 @@ beforeEach( () => {
   player = new Player(300, 300, 30, 30);
 });
 
-describe.only('Player unit testing', () => {
+describe('Player unit testing', () => {
   
   it('should instantiate a player', () => {
       assert.isObject(player); 
@@ -24,8 +24,8 @@ describe.only('Player unit testing', () => {
     assert.equal(player.w, 30);
   });
 
-  it('should have a default speed of 5', () => {
-    assert.equal(player.speed, 5);
+  it('should have a default speed of 4', () => {
+    assert.equal(player.speed, 4);
   });
 
   it('should be able to take an argument for speed', () => {

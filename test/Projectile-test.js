@@ -1,16 +1,19 @@
+global.Image = class {};
+global.Audio = class {};
+
 const chai = require('chai');
 const expect = chai.expect;
 const assert = chai.assert;
 const Projectile = require('../lib/Projectile');
+const Enemy = require ('../lib/Enemy.js');
+const Game = require('../lib/Game.js');
 
-global.Audio = class {};
-global.Image = class {};
 
 beforeEach(() => {
   projectile = new Projectile(30, 30, 5, 5);
 });
 
-describe('Projectile unit testing', () => {
+describe.only('Projectile unit testing', () => {
 
   it('should instantiate a projectile', () => {
     assert.isObject(projectile);
@@ -34,10 +37,10 @@ describe('Projectile unit testing', () => {
     assert.deepEqual(projectile.bullets, []);  
   });
 
-  it('should have height and width of 5 by default', () => {
+  it('should have height and width of 10 by default', () => {
     projectile = new Projectile();
-    assert.equal(projectile.h, 5);
-    assert.equal(projectile.w, 5);
+    assert.equal(projectile.h, 10);
+    assert.equal(projectile.w, 10);
   });
       
   it('should have default speed of 10', () => {
@@ -47,4 +50,28 @@ describe('Projectile unit testing', () => {
   it('should have default bulletCollision of false', () => {
     assert.equal(projectile.bulletCollision, false);
   });
+
+  it('should detect if a bullet collidies with an enemy, then splice both bullet and enemy and incriment score', () => {
+    game = new Game();
+
+    let shoot = new Projectile( player.x, player.y, 5, 5, -1, 0, 'left', 5);
+    projectile.bullets.push(shoot);
+    
+    enemy = new Enemy(300, 300, 20, 20);
+    game.enemyArray.push(enemy);
+    
+    
+    assert.equal(projectile.bullets.length, 1);
+    assert.equal(game.enemyArray.length, 1);
+    assert.equal(game.score, 0);
+    
+    projectile.projectileCollision(game);
+    
+    assert.equal(projectile.bullets.length, 0);
+    assert.equal(game.enemyArray.length, 0);
+    assert.equal(game.score, 10);    
+
+  });
+
+
 });
