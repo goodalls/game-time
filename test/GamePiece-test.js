@@ -6,9 +6,5 @@ global.Audio = class {};
 global.Image = class {};
 
 describe('GamePiece unit testing', () => {
-  
-  it('should', () => {
-    
-      });
       
 });
