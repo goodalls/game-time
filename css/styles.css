@@ -6,7 +6,7 @@ body {
   display: grid;
   font-family: 'Aldrich', sans-serif;
   grid-gap: 10px, 10px;
-  grid-template-columns: 1fr 800 1fr;
+  grid-template-columns: 1fr 800px 1fr;
   grid-template-rows: auto auto;
 }
 
@@ -69,3 +69,4 @@ button:hover {
 p {
   padding: 16px;
 }
+
