@@ -38,7 +38,9 @@ describe('Game unit testing', () => {
 
   it('should be able to spawn enemies', () => {
     assert.equal(game.enemyArray.length, 0);
-    game.spawn(20);
+    console.log(game.enemyArray.length);
+    game.spawn(20, 800);
+    console.log(game.enemyArray.length);
     assert.equal(game.enemyArray.length, 20);
   });
 
@@ -46,7 +48,6 @@ describe('Game unit testing', () => {
 
     game.spawn(20);
     assert.equal(game.enemyArray[0])
-  
   });
 
 });

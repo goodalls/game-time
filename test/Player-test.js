@@ -24,8 +24,8 @@ describe('Player unit testing', () => {
     assert.equal(player.w, 30);
   });
 
-  it('should have a default speed of 4', () => {
-    assert.equal(player.speed, 4);
+  it('should have a default speed of 3', () => {
+    assert.equal(player.speed, 3);
   });
 
   it('should be able to take an argument for speed', () => {
