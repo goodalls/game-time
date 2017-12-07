@@ -9,18 +9,44 @@ body {
 
 .column1 {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .column3 {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #canvas {
   background-color: white;
   background-image: url('../images/whiteboard.jpg');
   background-size: cover;
-  /* border: 1px solid black; */
   margin: 2em auto;
   display: block;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
 }
+
+button {
+    border-top: 1px solid #feb0a0;
+    background: #b52600;
+    padding: 19.5px 39px;
+    border-radius: 40px;
+    box-shadow: #feb0a0 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 24px;
+    font-family: Georgia, serif;
+    text-decoration: none;
+    vertical-align: middle;
+    height: 70px;
+}
+
+button:hover {
+   border-top-color: #b52600;
+   background: #feb0a0;
+   color: #000;
+   }
