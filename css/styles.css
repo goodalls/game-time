@@ -1,24 +1,37 @@
 body {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 800 1fr;
+  grid-template-rows: auto auto;
+  grid-gap: 10px, 10px;
   background-image: url('../images/ducky-bg.jpg');
   background-position: contain;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  font-family: 'Aldrich', sans-serif;
 }
 
 .column1 {
-  flex: 1;
+  grid-column: 1/2;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.column2 {
+  grid-column: 2/3;
+}
 .column3 {
-  flex: 1;
+  grid-column: 3/4;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer {
+  grid-row: 2;
+  grid-column: 2/3;
+  font-size: 20px;
+  text-align: center;
 }
 
 #canvas {
@@ -50,3 +63,7 @@ button:hover {
    background: #feb0a0;
    color: #000;
    }
+
+p {
+    padding: 16px;
+}
