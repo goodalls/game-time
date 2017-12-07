@@ -42,7 +42,7 @@ describe('Game unit testing', () => {
     assert.equal(game.enemyArray.length, 80);
   });
 
-  it.only('should detect enemys that are colliding and seperate them', () => {
+  it('should detect enemys that are colliding and seperate them', () => {
    
     const enemy1 = new Enemy(270, 300, 30, 30);
     enemy1.targetX = 300;
@@ -53,13 +53,11 @@ describe('Game unit testing', () => {
     enemy2.targetY = 300;
 
     game.enemyArray.push(enemy1, enemy2);
-    //console.log(game.enemyArray);
     
     assert.equal(game.enemyArray[0].colliding, false);
     assert.equal(game.enemyArray[1].colliding, false);
     
     game.enemyColliding();
-    console.log(game.enemyArray);
 
     assert.equal(game.enemyArray[0].colliding, true);
     //assert.equal(game.enemyArray[1].colliding, true);

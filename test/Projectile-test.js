@@ -1,5 +1,7 @@
 global.Image = class {};
-global.Audio = class {};
+global.Audio = class {
+  play() {}
+};
 
 const chai = require('chai');
 const expect = chai.expect;
@@ -18,6 +20,7 @@ describe('Projectile unit testing', () => {
   it('should instantiate a projectile', () => {
     assert.isObject(projectile);
   });
+  
   it('should take arguments for x, y, h and w', () => {
 
     projectile = new Projectile(30, 30, 5, 5, -1, 0, 'left', 5, false);
@@ -51,8 +54,7 @@ describe('Projectile unit testing', () => {
     assert.equal(projectile.bulletCollision, false);
   });
 
-  // have to comment out line 55 game.sounds('squeak') in projectile.js 
-  it.skip('should detect if a bullet collidies with an enemy, then splice both bullet and enemy and incriment score', () => {
+  it('should detect if a bullet collidies with an enemy, then splice both bullet and enemy and incriment score', () => {
     game = new Game();
 
     let shoot = new Projectile( player.x, player.y, 5, 5, -1, 0, 'left', 5);
