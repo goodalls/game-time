@@ -4,7 +4,7 @@ global.window = {};
 const chai = require('chai');
 const assert = chai.assert;
 const Enemy = require('../lib/Enemy.js');
-const Game = require('../lib/Game.js');
+const Game = require('../lib/Game.js')
 
 beforeEach( () => {
   game = new Game();
@@ -42,31 +42,29 @@ describe('Game unit testing', () => {
     assert.equal(game.enemyArray.length, 80);
   });
 
-  it('should detect other enemys and not overlap', () => {
+  it.only('should detect enemys that are colliding and seperate them', () => {
+   
+    const enemy1 = new Enemy(270, 300, 30, 30);
+    enemy1.targetX = 300;
+    enemy1.targetY = 300;
 
-    game.spawn(1, 800);
+    const enemy2 = new Enemy(330, 300, 30, 30);
+    enemy2.targetX = 300;
+    enemy2.targetY = 300;
 
-    game.enemyArray[0].x = 15
-    game.enemyArray[1].x = 10
-    game.enemyArray[0].y = 15
-    game.enemyArray[1].y = 10
-    game.enemyArray[2].x = 15
-    game.enemyArray[3].x = 10
-    game.enemyArray[2].y = 15
-    game.enemyArray[3].y = 10
+    game.enemyArray.push(enemy1, enemy2);
+    //console.log(game.enemyArray);
+    
+    assert.equal(game.enemyArray[0].colliding, false);
+    assert.equal(game.enemyArray[1].colliding, false);
+    
     game.enemyColliding();
-    assert.equal(game.enemyArray[0].colliding, true)
-    assert.equal(game.enemyArray[1].colliding, true)
+    console.log(game.enemyArray);
 
-    game.enemyArray[0].x = 10
-    game.enemyArray[1].x = 100
-    game.enemyArray[0].y = 10
-    game.enemyArray[1].y = 100
+    assert.equal(game.enemyArray[0].colliding, true);
+    //assert.equal(game.enemyArray[1].colliding, true);
 
-    assert.equal(game.enemyArray[0].colliding, false)
-    assert.equal(game.enemyArray[1].colliding, false)
-    
-    
+
   });
 
 });
