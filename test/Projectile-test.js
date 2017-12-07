@@ -73,6 +73,4 @@ describe('Projectile unit testing', () => {
     assert.equal(game.score, -90);    
 
   });
-
-
 });
