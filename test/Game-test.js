@@ -44,4 +44,10 @@ describe('Game unit testing', () => {
     assert.equal(game.enemyArray.length, 20);
   });
 
+  it.skip('should detect other enemys and not overlap', () => {
+
+    game.spawn(20);
+    assert.equal(game.enemyArray[0])
+  });
+
 });
