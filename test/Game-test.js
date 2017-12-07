@@ -38,16 +38,35 @@ describe('Game unit testing', () => {
 
   it('should be able to spawn enemies', () => {
     assert.equal(game.enemyArray.length, 0);
-    console.log(game.enemyArray.length);
     game.spawn(20, 800);
-    console.log(game.enemyArray.length);
-    assert.equal(game.enemyArray.length, 20);
+    assert.equal(game.enemyArray.length, 80);
   });
 
-  it.skip('should detect other enemys and not overlap', () => {
+  it('should detect other enemys and not overlap', () => {
 
-    game.spawn(20);
-    assert.equal(game.enemyArray[0])
+    game.spawn(1, 800);
+
+    game.enemyArray[0].x = 15
+    game.enemyArray[1].x = 10
+    game.enemyArray[0].y = 15
+    game.enemyArray[1].y = 10
+    game.enemyArray[2].x = 15
+    game.enemyArray[3].x = 10
+    game.enemyArray[2].y = 15
+    game.enemyArray[3].y = 10
+    game.enemyColliding();
+    assert.equal(game.enemyArray[0].colliding, true)
+    assert.equal(game.enemyArray[1].colliding, true)
+
+    game.enemyArray[0].x = 10
+    game.enemyArray[1].x = 100
+    game.enemyArray[0].y = 10
+    game.enemyArray[1].y = 100
+
+    assert.equal(game.enemyArray[0].colliding, false)
+    assert.equal(game.enemyArray[1].colliding, false)
+    
+    
   });
 
 });

@@ -45,27 +45,27 @@ footer {
 }
 
 button {
-    background: #b52600;
-    border-radius: 40px;
-    border-top: 1px solid #feb0a0;
-    box-shadow: #feb0a0 0 1px 0;
-    color: white;
-    font-family: 'Aldrich', sans-serif;
-    font-size: 24px;
-    height: 70px;
-    padding: 19.5px 39px;
-    text-decoration: none;
-    text-shadow: rgba(0,0,0,.4) 0 1px 0;
-    vertical-align: middle;
-    width: 210px;
+  background: #b52600;
+  border-radius: 40px;
+  border-top: 1px solid #feb0a0;
+  box-shadow: #feb0a0 0 1px 0;
+  color: white;
+  font-family: 'Aldrich', sans-serif;
+  font-size: 24px;
+  height: 70px;
+  padding: 19.5px 39px;
+  text-decoration: none;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  vertical-align: middle;
+  width: 210px;
 }
 
 button:hover {
-   background: #feb0a0;
-   border-top-color: #b52600;
-   color: #000;
-   }
+  background: #feb0a0;
+  border-top-color: #b52600;
+  color: #000;
+}
 
 p {
-    padding: 16px;
+  padding: 16px;
 }
