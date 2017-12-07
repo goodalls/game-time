@@ -40,9 +40,12 @@ describe('Player unit testing', () => {
   });
 
   it('should have forEaches through an array and set item.targetX and item.targetY to player.x and player.y', () => {
-    const enemyArray = []
+    const enemyArray = [];
     enemy = new Enemy(200, 200, 20, 20);
     enemyArray.push(enemy);
+
+    assert.equal(enemy.targetX, null);
+    assert.equal(enemy.targetY, null);
 
     player.playerCollision(enemyArray, context, player);
   
@@ -51,7 +54,7 @@ describe('Player unit testing', () => {
   });
 
   it('should have detect collision of the player with the passed in array and then sets player.isDead to true', () => {
-    const enemyArray = []
+    const enemyArray = [];
     enemy = new Enemy(280, 280, 20, 20);
     enemyArray.push(enemy);
 
