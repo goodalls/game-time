@@ -30,9 +30,9 @@ describe('Game unit testing', () => {
     assert.equal(game.loadScreen, true);
   });
 
-  it('should have defaults of round, score and delay set to a value of 0', () => {
+  it('should have defaults of round score and delay defaults set to -100 and 0', () => {
     assert.equal(game.round, 0);
-    assert.equal(game.score, 0);
+    assert.equal(game.score, -100);
     assert.equal(game.delay, 0);
   });
 
