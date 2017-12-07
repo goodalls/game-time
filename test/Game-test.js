@@ -36,16 +36,12 @@ describe('Game unit testing', () => {
     assert.equal(game.delay, 0);
   });
 
-  it.skip('should be able to spawn enemies horizontally', () => {
+  it('should be able to spawn enemies', () => {
     assert.equal(game.enemyArray.length, 0);
-    game.spawnHorizontal(20);
+    console.log(game.enemyArray.length);
+    game.spawn(20, 800);
+    console.log(game.enemyArray.length);
     assert.equal(game.enemyArray.length, 20);
-  });
-
-  it.skip('should be able to spawn enemies vertically', () => {
-    assert.equal(game.enemyArray.length, 0);
-    game.spawnVerticle(10);
-    assert.equal(game.enemyArray.length, 10);
   });
 
 });
