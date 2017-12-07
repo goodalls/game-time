@@ -16,9 +16,12 @@ describe('Game unit testing', () => {
     assert.isObject(game);
   });
 
-  it('should have a default enemyArray set to an empty array', () => {
+  it('should have default properties of enemyArray and bullets and set to a empty arrays', () => {
     assert.isArray(game.enemyArray);
     assert.deepEqual(game.enemyArray, []); 
+
+    assert.isArray(game.bullets);
+    assert.deepEqual(game.bullets, []); 
   });
 
   it('should have defaults of gameOver and initiated set to false', () => {
@@ -61,8 +64,6 @@ describe('Game unit testing', () => {
 
     assert.equal(game.enemyArray[0].colliding, true);
     //assert.equal(game.enemyArray[1].colliding, true);
-
-
   });
 
 });
