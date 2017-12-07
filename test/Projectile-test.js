@@ -35,11 +35,6 @@ describe('Projectile unit testing', () => {
     assert.equal(projectile.bulletCollision, false);
   });
 
-  it('should have empty array called projectile.bullets', () => {
-    expect(projectile.bullets.isArray, true);
-    assert.deepEqual(projectile.bullets, []);  
-  });
-
   it('should have height and width of 10 by default', () => {
     projectile = new Projectile();
     assert.equal(projectile.h, 10);
@@ -58,19 +53,19 @@ describe('Projectile unit testing', () => {
     game = new Game();
 
     let shoot = new Projectile( player.x, player.y, 5, 5, -1, 0, 'left', 5);
-    projectile.bullets.push(shoot);
+    game.bullets.push(shoot);
     
     enemy = new Enemy(300, 300, 20, 20);
     game.enemyArray.push(enemy);
     
     
-    assert.equal(projectile.bullets.length, 1);
+    assert.equal(game.bullets.length, 1);
     assert.equal(game.enemyArray.length, 1);
     assert.equal(game.score, -100);
     
     projectile.projectileCollision(game);
     
-    assert.equal(projectile.bullets.length, 0);
+    assert.equal(game.bullets.length, 0);
     assert.equal(game.enemyArray.length, 0);
     assert.equal(game.score, -90);    
 
