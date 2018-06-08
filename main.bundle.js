@@ -373,7 +373,7 @@
 	      let y1 = Math.random() * -400;
 	      let y2 = Math.random() * 400 + canvas.width;
 
-	      this.enemyArray.push(new Enemy(x1, y1, 30, 30), new Enemy(x2, y2, 30, 30), new Enemy(y1, x1, 30, 30), new Enemy(y2, x2, 30, 30));
+	      this.enemyArray.push(new Enemy(x1, y1, 35, 35), new Enemy(x2, y2, 35, 35), new Enemy(y1, x1, 35, 35), new Enemy(y2, x2, 35, 35));
 	    }
 	  }
 
